@@ -73,15 +73,31 @@ input,textarea,button
 	
 //Navigation start--------------------
 header
+	padding: 5px 0
+	.logo
+		img
+			width: 100%
+			max-width: 270px
 	nav
+		text-align: right
 		ul
+			font-size: 0
 			li
 				display: inline-block
 				vertical-align: top
+				line-height: 75px
 				a
 					color: $black
-					display: block
+					font-size: 16px
+					display: inline-block
 					padding: 5px 10px
+					line-height: 18px
+					text-transform: capitalize
+					vertical-align: middle
+					transition: all 0.3s
+					&:hover,&.active
+						background-color: $main
+						color: $white
 //Navigation end-----------------------
 
 // Button start------------------------

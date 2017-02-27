@@ -1,9 +1,12 @@
 header
 	div.container
 		div.row
-			div.col-md-12
+			div.col-md-3
+				a(href="/" class="logo")
+					img(src="img/logo.png")
+			div.col-md-9
 				nav
-					ul.nav
-						each val, index in {1:'Home',2:'About',3:'News',4:'Contacts'}
+					ul.nav.right
+						each val, index in {1:'main',2:'technologies',3:'clients',4:'contact',5:'hire us'}
 							li
 								a(href=index + val)= val
