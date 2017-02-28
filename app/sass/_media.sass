@@ -9,11 +9,77 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	#technologies 
+		.technologies-wrap
+			.technologies-item 
+				&:nth-child(odd) 
+					img.main-img
+						top: 60px
+					img.anim-img
+						&.first
+							left: 50%
+							margin-left: -153px
+							top: 38px
+						&.second
+							left: 50%
+							top: 18px
+							margin-left: -175px
+				&:nth-child(even) 
+					img.main-img
+						bottom: initial
+						top: 60px
+					img.anim-img
+						&.first
+							left: 50%
+							margin-left: -153px
+							top: 38px
+						&.second
+							left: 50%
+							top: 18px
+							margin-left: -175px
+				h3
+					position: initial
+					&:before
+						display: none
+	#contact
+		text-align: center
+		#send 
+			.col-md-6
+				&:nth-child(odd)
+					padding-right: 0
+				.form-group
+					text-align: left
+			.textarea-block
+				label
+					display: block
+					width: 100%
+					text-align: left
+	.phone-block a
+		margin-bottom: 10px
 
+@media only screen and (max-width : 900px)
+	#main .monitor
+		width: 700px
 
-/* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	/* Small Devices, Tablets */
+	.title
+		font-size: 40px
+	#main 
+		.monitor,.circle
+			width: 100%
+
+	.mob-button
+		display: block!important
+
+	nav
+		display: none
+		ul
+			li
+				display: block!important
+				text-align: center!important
+
+
 	
 	/*Disable Animation on Mobile Devices*/
 	.animated
@@ -39,7 +105,23 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	#technologies 
+		.technologies-wrap 
+			.technologies-item
+				img.anim-img
+					animation: none !important
+					&.second
+						width: 300px
+	#main
+		background-position: 0 0
+
+	#clients 
+		.client-item
+			>div
+				display: block
+				width: 100%!important
+			.image-wrap
+				margin: 10px 0
 
 
 /* Custom, iPhone Retina */

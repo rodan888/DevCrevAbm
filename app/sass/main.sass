@@ -17,6 +17,199 @@
 	vertical-align: top
 
 //Custom Styles Here
+section
+	padding: 1px 0
+#main
+	background-image: url("../img/top-triangle.png")
+	background-attachment: fixed
+	background-position: 0% 60%
+	background-repeat: no-repeat
+	height: 720px
+	padding-top: 85px
+	position: relative	
+	z-index: 10
+	.circle
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%,-50%)
+	.monitor
+		position: absolute
+		left: 50%
+		bottom: 0
+		max-width: 1000px
+		transform: translateX(-50%)
+
+#technologies
+	.technologies-wrap
+		max-width: 985px
+		margin: 0 auto
+		.technologies-item
+			min-height: 380px
+			position: relative
+			margin-bottom: 40px
+			margin-top: 40px
+			h3
+				position: absolute
+			&:nth-child(odd)
+				img.main-img
+					top: 0
+					top: initial
+				h3
+					top: 10px
+					right: 0
+				img.anim-img
+					&.first
+						top: -25px
+						left: 92px
+					&.second
+						left: 65px
+						top: -30px
+			&:nth-child(even)
+				img.main-img
+					bottom: 45px
+				h3
+					left: 0
+					bottom: 10px
+				img.anim-img
+					bottom: 0px
+					top: initial
+					&.first
+						left: 92px
+					&.second
+						left: 68px
+						bottom: -15px
+
+			img.main-img
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+
+			img.anim-img
+				position: absolute
+				z-index: -1
+				opacity: 0.5
+				&.first
+					width: 310px
+					animation: rotationsFirst 60s 0s infinite linear
+				&.second
+					width: 360px
+					animation: rotationsSecond 60s 0s infinite linear
+
+#clients
+	background-color: $green
+	padding-bottom: 55px
+	position: relative
+	&:before
+		position: absolute
+		content: ''
+		bottom: 0
+		left: 50%
+		margin-left: -70px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 0 70px 55px
+		border-color: transparent transparent $white transparent
+	&:after
+		position: absolute
+		content: ''
+		left: 50%
+		margin-left: -22px
+		bottom: 6px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 20px 22px 0
+		border-color: $green transparent transparent transparent
+	.title
+		color: $white
+	.client-item
+		font-size: 0
+		margin-bottom: 50px
+		>div
+			display: inline-block
+			vertical-align: top
+			font-size: 16px
+		.image-wrap
+			width: 40%
+			height: 205px
+			overflow: hidden
+			img
+				width: 100%
+		.content-wrap
+			width: 60%
+			padding-left: 15px
+			color: $white
+			h4
+				text-transform: uppercase
+				margin-bottom: 15px
+			p
+				font-family: 'RobotoLight'
+
+#contact
+	background-color: $main
+	position: relative
+	padding-bottom: 55px
+	&:before
+		position: absolute
+		content: ''
+		bottom: 0
+		left: 50%
+		margin-left: -70px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 0 70px 55px
+		border-color: transparent transparent $white transparent
+	&:after
+		position: absolute
+		content: ''
+		left: 50%
+		margin-left: -22px
+		bottom: 6px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 20px 22px 0
+		border-color: $main transparent transparent transparent
+	#send
+		.col-md-6:nth-child(odd)
+			padding-right: 10px
+	.title
+		color: $white
+	.btn
+		background-color: $green
+		&:hover
+			color: $white
+	.subtitle
+		font-size: 16px
+		color: $white
+		&:before
+			display: none
+
+
+.phone-block
+	p
+		color: $white
+	a
+		color: $white
+		margin-bottom: 30px
+		display: block
+
+.soc-block
+	li
+		display: inline-block
+		list-style-type: none
+		a
+			font-size: 22px
+			display: block
+			padding: 5px
+			border: 2px solid $white
+			border-radius: 3px
+			width: 49px
+			text-align: center
+			color: $white
 
 
 .slider
@@ -41,6 +234,36 @@
 				top: 0
 
 
+#map
+	.gmap
+		height: 350px
+@keyframes rotationsFirst
+	0%
+		transform: rotate(0deg)
+	20%
+		transform: rotate(120deg)
+	40%
+		transform: rotate(240deg)
+	60%
+		transform: rotate(360deg)
+	80%
+		transform: rotate(240deg)
+	100%
+		transform: rotate(0deg)
+
+@keyframes rotationsSecond
+	0%
+		transform: rotate(0deg)
+	20%
+		transform: rotate(-120deg)
+	40%
+		transform: rotate(-240deg)
+	60%
+		transform: rotate(-360deg)
+	80%
+		transform: rotate(-240deg)
+	100%
+		transform: rotate(0deg)
 
 
 footer 

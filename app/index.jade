@@ -4,10 +4,164 @@ html.no-js(lang="ru")
 	body
 		include templates/structure/header
 		main
-			div.content-block.center
-				h1.title Write code here
-				p.subtitle or click button and select some dom element
-				a(href="elements.html").btn.fool my simple framework
+			section#main
+				h1.title.center.mt4 Your crew for your 
+					br 
+					| web & mobile
+				img(src="img/top-circle.png" class="circle" alt="circle")
+				img(src="img/top-monitor.png" class="monitor" alt="monitor")
+			section#technologies
+				h2.title.center.mt6.mb6 Technologies
+				div.technologies-wrap
+					div.container-fluid
+						div.row
+							-
+								var advanList = [
+									{
+										image: 'img/technologies1.png',
+										title: 'Front end'
+									},{
+										image: 'img/technologies2.png',
+										title: 'Mobile'
+									},{
+										image: 'img/technologies3.png',
+										title: 'Back end'
+									},{
+										image: 'img/technologies4.png',
+										title: 'Cloud'
+									}
+								];
+							for val, index in advanList
+								div.col-md-6.technologies-item.center
+									h3(class="subtitle")= val.title
+									img(src= val.image class="main-img")
+									img(src='img/first-icons-set.png' class="anim-img first")
+									img(src='img/second-icons-set.png' class="anim-img second")
 
-		include templates/structure/footer			
+
+			section#clients.mt2
+				h2.title.center.mt6.mb6 Clients
+				div.container
+					div.row
+						div.col-md-6.client-item
+							div.image-wrap
+								img(src="img/seampl6.jpg" alt="alt")
+							div.content-wrap
+								h4 Lorem ipsum dolor.
+								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
+						div.col-md-6.client-item
+							div.image-wrap
+								img(src="img/seampl1.jpg" alt="alt")
+							div.content-wrap
+								h4 Lorem ipsum dolor.
+								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
+						div.col-md-6.client-item
+							div.content-wrap
+								h4 Lorem ipsum dolor.
+								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
+							div.image-wrap
+								img(src="img/seampl2.jpg" alt="alt")
+						div.col-md-6.client-item
+							div.content-wrap
+								h4 Lorem ipsum dolor.
+								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
+							div.image-wrap
+								img(src="img/seampl9.jpg" alt="alt")
+
+			section#contact
+				h2.title.center.mt6.mb6 Contact us
+				div.container
+					div.row
+						div.col-md-6
+							h3(class="subtitle") Отправьте нам запрос, заполнив поля ниже
+							form#send(action="mail.php")
+								div.container-fluid
+									div.row
+										div.col-md-6.clrp
+											div.form-group
+												label(for="form-text") Name
+												input(type="text" name="form-text" id="form-text")
+										div.col-md-6.clrp
+											div.form-group
+												label(for="phone") Телефон
+												input(type="text" name="phone" id="phone" required)
+										div.col-md-6.clrp
+											div.form-group
+												label(for="email") E-mail
+												input(type="text" name="email" id="email" required)
+										div.col-md-6.clrp
+											div.form-group
+												label(for="place") Регион
+												input(type="text" name="place" id="place" required)
+								div.form-group.textarea-block
+									label(for="form-textarea") Сообщение
+									textarea(name="form-textarea" id="form-textarea")
+									button(type="submit" class="btn full") Submit
+								input(type="hidden" name="project_name" value="Имя сайта")
+								input(type="hidden" name="admin_email" value="tsumbaluk888@gmail.com")
+								input(type="hidden" name="form_subject" value="Заявка с имя сайта")
+						div.col-md-6
+							h3(class="subtitle") Телефоны нашего офиса
+							div.container-fluid.phone-block
+									div.row
+										div.col-md-6
+											p Россия
+											a(href="tel://+7 (727) 311-03-51") +7 (727) 311-03-51
+										div.col-md-6
+											p Казахстан
+											a(href="tel://+7 (727) 311-03-51") +7 (727) 311-03-51
+										div.col-md-6
+											p Украина
+											a(href="tel://+380 (44) 207-39-55") +380 (44) 207-39-55
+										div.col-md-6
+											p Польша
+											a(href="tel://+48 (22) 206-21-05") +48 (22) 206-21-05
+							h3(class="subtitle mt3") Свяжитесь в сетях
+							ul.soc-block
+								-
+									var social = {
+										1:'fa fa-pinterest',
+										2:'fa fa-facebook',
+										3:'fa fa-linkedin',
+										4:'fa fa-vk',
+										5:'fa fa-github',
+										6:'fa fa-codepen'
+									};		
+								each val, index in social
+									li
+										a(href="#" target="_blank" rel="nofollow")
+											i(class=val)
+			div#map
+				div(class="gmap" data-lat="50.473119" data-lng="30.4500583" data-zoom="5" data-marker="img/marker.png")
+			
+
+
 		include templates/structure/scripts
+		script(src="http://maps.google.com/maps/api/js?key=AIzaSyDeQ0u4qmmTOrvSAMlV5UF9fIVOs9v7o0A")
+		script.
+			function mapInit(){
+				$('.gmap').each(function(){
+					var container = this;
+					var latlng = new google.maps.LatLng(
+						parseFloat($(container).data('lat')),
+						parseFloat($(container).data('lng'))
+					);
+					var mapOptions = {
+						zoom: parseInt($(container).data('zoom')),
+						center: latlng,
+						zoomControl: true,
+						mapTypeControl: false,
+						streetViewControl: false,
+						scrollwheel: true,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+					var map = new google.maps.Map(container, mapOptions);
+
+					var marker = new google.maps.Marker({
+						position: latlng,
+						map: map,
+						icon: $(container).data('marker')
+					});
+				});
+			};
+			mapInit();

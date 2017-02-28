@@ -58,7 +58,8 @@ $(function() {
 		toggleC: function(el){
 			el.on('click',function(){
 				el.toggleClass('active');
-			});
+				$('nav').slideToggle('fast');
+			});			
 		},
 		winH: function(){
 			return this.opt.wind.height();
@@ -69,6 +70,18 @@ $(function() {
 		dragstart: function(el){
 			$(el).on('dragstart',function(event){
 				event.preventDefault();
+			});
+		},
+		scrollEventListener: function(){
+			this.opt.wind.on('scroll', function(){
+				var scrlTop = $(this).scrollTop(),
+						header  = $('header'),
+						headerH = header.height();
+				if(scrlTop > headerH){
+					header.addClass('active');
+				}else{
+					header.removeClass('active');
+				};
 			});
 		},
 		init: function(){
@@ -86,30 +99,73 @@ $(function() {
 			this.opt.slider.owlCarousel(this.opt.owlOptions);
 			//mob button toggle
 			this.toggleC(this.opt.mobButton);
+
+			this.scrollEventListener();
+
+			$('#main').css('max-height', main.opt.wind.height()+'px');
+			$('nav a').on('click', function(){
+				var mobBtn = $('.mob-button');
+				if(mobBtn.is(':visible')){
+					mobBtn.click();					
+				};
+			});
 		}
 	};
 
-	//E-mail Ajax Send
-	$("form").submit(function() { 
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php",
-			data: th.serialize()
-		}).done(function() {
-			alert("Thank you!");
-			setTimeout(function() {		
-				th.trigger("reset");
-			}, 1000);
-		});
-		return false;
-	});
 
 
 	$(document).ready(function(){
 
 		main.init();
 
+		// smoof-scroll
+		var navigation_links = jQuery("nav a");
+		navigation_links.click( function(event) {
+			event.preventDefault();
+			jQuery.scrollTo(
+				jQuery(this).attr("href"),
+				{
+					duration: 600,
+					offset: { 'left':0, 'top':-0.03*jQuery(window).height() }
+				}
+			);
+		});		
+		jQuery('section').waypoint({
+			handler: function(event, direction) {
+				var active_section = jQuery(this);			
+				if (direction === "up") active_section = active_section.prev();
+				var active_link = jQuery('nav a[href="#' + active_section.attr("id") + '"]');
+				navigation_links.removeClass("active");
+				active_link.addClass("active");
+			},
+			offset: '5%'
+		});
+
+		$('#send input, #send textarea').on('focusin',function(){
+			$(this).prev().css('marginTop','-35px');
+		}).on('focusout',function(){
+			if ($(this).val()) {				
+				return false;
+			}else{
+				$(this).prev().css('marginTop','0px');					
+			};		
+		});
+
+		//E-mail Ajax Send
+		$("form").submit(function() { 
+			var th = $(this);
+			$.ajax({
+				type: "POST",
+				url: this.action,
+				data: th.serialize()
+			}).done(function() {
+				alert("Thank you!");
+				setTimeout(function() {		
+					th.trigger("reset");
+				}, 1000);
+			});
+			return false;
+		});
 		//Chrome Smooth Scroll
 		try {
 			$.browserSelector();

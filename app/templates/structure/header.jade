@@ -1,12 +1,16 @@
 header
 	div.container
 		div.row
-			div.col-md-3
+			div.col-sm-3
 				a(href="/" class="logo")
 					img(src="img/logo.png")
-			div.col-md-9
+				div.mob-button
+					span
+					span
+					span
+			div.col-sm-9
 				nav
 					ul.nav.right
 						each val, index in {1:'main',2:'technologies',3:'clients',4:'contact',5:'hire us'}
 							li
-								a(href=index + val)= val
+								a(href='#' + val)= val	

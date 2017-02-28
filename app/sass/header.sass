@@ -3,18 +3,25 @@
 @import "_mixins.sass"
 
 +font-face("RobotoRegular", "../fonts/RobotoRegular/RobotoRegular", $file-formats: eot woff ttf)
-+font-face("RobotoRegular", "../fonts/RobotoLight/RobotoLight", $file-formats: eot woff ttf)
++font-face("RobotoLight", "../fonts/RobotoLight/RobotoLight", $file-formats: eot woff ttf)
 +font-face("OpenSansBold", "../fonts/OpenSansBold/OpenSansBold", $file-formats: eot woff ttf)
++font-face("Fregat", "../fonts/Fregat/Fregat", $file-formats: eot woff ttf)
++font-face("FregatBold", "../fonts/FregatBold/Fregat-Bold", $file-formats: eot woff ttf)
 
 body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	padding-bottom: 100px
 	line-height: 1.6
 	font-family: "RobotoRegular", sans-serif
 	overflow-x: hidden
 
+.center
+	text-align: center
+.left
+	text-align: left
+.right
+	text-align: right
 .hidden
 	display: none
 .clrp
@@ -27,6 +34,10 @@ body
 	margin-top: 20px
 .mb2
 	margin-bottom: 20px
+.mt3
+	margin-top: 30px
+.mb3
+	margin-bottom: 30px
 .mt4
 	margin-top: 40px
 .mb4
@@ -60,24 +71,56 @@ input,textarea,button
 
 .title	
 	text-transform: uppercase
-	margin-bottom: 10px
-	letter-spacing: 1px
-	color: $main
-	font-size: 22px
+	color: $titleColor
+	font-size: 52px
+	line-height: 62px
+	z-index: 100
+	position: relative
+	font-family: 'FregatBold'
 
 .subtitle
 	font-size: 18px
 	line-height: 24px
-	color: $textColor
+	color: $black
 	margin-bottom: 25px
+	font-weight: 100
+	text-transform: uppercase
+	font-family: "RobotoRegular"
+	&:before
+		position: absolute
+		content: ''
+		left: -7px
+		bottom: 2px
+		width: 3px
+		height: 18px
+		background-color: #b7c9cb
 	
 //Navigation start--------------------
 header
 	padding: 5px 0
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 1000
+	background-color: rgba(255,255,255, .5)
+	transition: background-color 0.3s	
+	&.active
+		background-color: rgba(255,255,255, .9)
+		box-shadow: 0 1px 3px $gray
+		.logo
+			img
+				width: 150px
+		nav			
+			ul li
+				line-height: 42px
 	.logo
 		img
 			width: 100%
 			max-width: 270px
+			transition: width 0.3s
+	.mob-button
+		display: none
 	nav
 		text-align: right
 		ul
@@ -86,6 +129,7 @@ header
 				display: inline-block
 				vertical-align: top
 				line-height: 75px
+				transition: line-height 0.3s
 				a
 					color: $black
 					font-size: 16px
@@ -207,7 +251,6 @@ header
 			height: 80px
 			bottom: -80px			
 			z-index: 1
-			@include background-image(linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 40%,rgba(255,255,255,1) 100%))	
 		&:hover
 			box-shadow: 0 0px 8px $textColor
 			&:before
@@ -241,12 +284,12 @@ header
 
 // Burger button start----------------------
 .mob-button			
-	position: relative
+	position: absolute
 	width: 32px
 	height: 32px
 	cursor: pointer	
 	z-index: 1000		
-	top: 32px
+	top: 5px
 	right: 12px
 	margin: 0 auto
 	span
@@ -254,7 +297,7 @@ header
 		width: 100%
 		left: 0
 		height: 3px
-		background-color: $black
+		background-color: $main
 		@include transition(all 0.3s)
 		&:nth-child(1)
 			top: 4px
