@@ -1,0 +1,26 @@
+form.send(action="mail.php")
+	div.container-fluid
+		div.row
+			div.col-md-6.clrp
+				div.form-group
+					label(for="form-text") Name
+					input(type="text" name="form-text" id="form-text")
+			div.col-md-6.clrp
+				div.form-group
+					label(for="phone-area") Телефон
+					input(type="text" name="phone" id="phone-area" required)
+			div.col-md-6.clrp
+				div.form-group
+					label(for="email") E-mail
+					input(type="text" name="email" id="email" required)
+			div.col-md-6.clrp
+				div.form-group
+					label(for="place") Регион
+					input(type="text" name="place" id="place" required)
+	div.form-group.textarea-block
+		label(for="form-textarea") Сообщение
+		textarea(name="form-textarea" id="form-textarea")
+		button(type="submit" class="btn full") Submit
+	input(type="hidden" name="project_name" value="Имя сайта")
+	input(type="hidden" name="admin_email" value="tsumbaluk888@gmail.com")
+	input(type="hidden" name="form_subject" value="Заявка с имя сайта")

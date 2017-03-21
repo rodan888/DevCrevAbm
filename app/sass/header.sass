@@ -130,7 +130,7 @@ header
 				vertical-align: top
 				line-height: 75px
 				transition: line-height 0.3s
-				a
+				a,button
 					color: $black
 					font-size: 16px
 					display: inline-block
@@ -138,6 +138,7 @@ header
 					line-height: 18px
 					text-transform: capitalize
 					vertical-align: middle
+					background-color: transparent
 					transition: all 0.3s
 					&:hover,&.active
 						background-color: $main
@@ -146,31 +147,31 @@ header
 
 // Button start------------------------
 .btn
-	border: 2px solid $main
-	color: $main
+	border: 2px solid $black
+	color: $white
+	background-color: $black
 	text-transform: uppercase	
 	height: 40px
 	line-height: 35px
 	display: inline-block
-	background-color: transparent	
 	min-width: 170px
 	text-align: center
 	font-size: 12px
 	@include border-radius(3px)
 	@include transition(all 0.3s)
 	&:hover
-		background-color: $red
-		border-color: $red
-		color: $white
+		background-color: transparent
+		border-color: $black
+		color: $black
 	&.full
 		display: block
-		background-color: $main
 		color: $white
+		background-color: $black
 		width: 100%
 		&:hover
-			background-color: transparent	
-			color: $main
-			border-color: $main
+			background-color: transparent
+			border-color: $black
+			color: $black
 	&.grey
 		border-color: $textColor
 		color: $textColor

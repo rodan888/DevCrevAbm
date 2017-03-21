@@ -118,6 +118,33 @@ $(function() {
 
 		main.init();
 
+		$('.order-popup').svgpopup({
+		  stepX: 6,	
+		  stepY: 4,
+		  figure: 'triangle',
+		  fill: '#FFA800',
+		  strokeFill: 'rgba(255,255,255, .6)',
+		  opacity: 0.8,	
+		  visible: false,
+		  speed: 1,
+		  randomize: false
+		});
+
+		$('.svg-progress-hexagon').svgprogress({
+			figure: "hexagon",
+			progressFill: '#FFA800',
+			emptyFill: '#ccc'
+		});
+
+		jQuery('#advantages').waypoint({	
+			handler: function(event, direction){
+				if (direction === "down") {
+					$('.svg-progress-hexagon').trigger("redraw");					
+				};
+			},
+			offset: '10%'
+		});
+
 		// smoof-scroll
 		var navigation_links = jQuery("nav a");
 		navigation_links.click( function(event) {
@@ -141,10 +168,10 @@ $(function() {
 			offset: '5%'
 		});
 
-		$('#send input, #send textarea').on('focusin',function(){
+		$('.send input, .send textarea').on('focusin',function(){
 			$(this).prev().css('marginTop','-35px');
 		}).on('focusout',function(){
-			if ($(this).val()) {				
+			if ($(this).val()) {		
 				return false;
 			}else{
 				$(this).prev().css('marginTop','0px');					
@@ -152,7 +179,7 @@ $(function() {
 		});
 
 		//E-mail Ajax Send
-		$("form").submit(function() { 
+		$("form.send").submit(function() { 
 			var th = $(this);
 			$.ajax({
 				type: "POST",

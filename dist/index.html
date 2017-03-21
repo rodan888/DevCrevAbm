@@ -21,20 +21,69 @@
           <div class="col-sm-9">
             <nav>
               <ul class="nav right">
-                <li><a href="#main">main</a></li>
-                <li><a href="#technologies">technologies</a></li>
-                <li><a href="#clients">clients</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#hire us">hire us</a></li>
+                <li><a href="#main">main</a>
+                </li>
+                <li><a href="#services">services</a>
+                </li>
+                <li><a href="#technologies">technologies</a>
+                </li>
+                <li><a href="#clients">clients</a>
+                </li>
+                <li><a href="#advantages">advantages</a>
+                </li>
+                <li><a href="#contact">contact</a>
+                </li>
+                <li>
+                  <button type="button" data-svg-popup="order-popup" class="order-popup">hire us</button>
+                </li>
               </ul>
             </nav>
           </div>
         </div>
       </div>
     </header>
-    <main>
+    <main>			
       <section id="main">
         <h1 class="title center mt4">Your crew for your <br>web & mobile</h1><img src="img/top-circle.png" alt="circle" class="circle"><img src="img/top-monitor.png" alt="monitor" class="monitor">
+      </section>
+      <section id="services" class="mt2">
+        <h2 class="title center mt6 mb6">Services</h2>
+        <div class="services-wrap">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="service-item">
+                  <h3 class="subtitle">Аналитика бизнеса и выявление потребностей</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.</p>
+                </div>
+                <div class="service-item">
+                  <h3 class="subtitle">Прототипирование и предварительный дизайн</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.</p>
+                </div>
+                <div class="service-item">
+                  <h3 class="subtitle">Разработка корпоративных приложений</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.</p>
+                </div>
+                <div class="service-item">
+                  <h3 class="subtitle">Продвижение в интернете</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="fast-order">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8">
+              <h3 class="subtitle">Lorem ipsum dolor sit amet, consectetur.</h3>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" data-svg-popup="order-popup" class="order-popup btn">hire us</button>
+            </div>
+          </div>
+        </div>
       </section>
       <section id="technologies">
         <h2 class="title center mt6 mb6">Technologies</h2>
@@ -92,13 +141,48 @@
           </div>
         </div>
       </section>
+      <section id="advantages">
+        <h2 class="title center mt6 mb6">Why us?</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="advantages-item">
+                <div class="svg-progress-hexagon"></div>
+                <h4 class="subtitle">Lorem ipsum dolor sit amet. </h4><i class="fa fa-line-chart"></i>
+                <p> <span>{</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!<span>}</span></p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="advantages-item">
+                <div class="svg-progress-hexagon"></div>
+                <h4 class="subtitle">Lorem ipsum dolor sit amet. </h4><i class="fa fa-bar-chart"></i>
+                <p> <span>{</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!<span>}</span></p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="advantages-item">
+                <div class="svg-progress-hexagon"></div>
+                <h4 class="subtitle">Lorem ipsum dolor sit amet. </h4><i class="fa fa-user"></i>
+                <p> <span>{</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!<span>}</span></p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="advantages-item">
+                <div class="svg-progress-hexagon"></div>
+                <h4 class="subtitle">Lorem ipsum dolor sit amet. </h4><i class="fa fa-shield"></i>
+                <p> <span>{</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!<span>}</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="contact">
         <h2 class="title center mt6 mb6">Contact us</h2>
         <div class="container">
           <div class="row">
             <div class="col-md-6">
               <h3 class="subtitle">Отправьте нам запрос, заполнив поля ниже</h3>
-              <form id="send" action="mail.php">
+              <form action="mail.php" class="send">
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-md-6 clrp">
@@ -109,8 +193,8 @@
                     </div>
                     <div class="col-md-6 clrp">
                       <div class="form-group">
-                        <label for="phone">Телефон</label>
-                        <input type="text" name="phone" id="phone" required>
+                        <label for="phone-area">Телефон</label>
+                        <input type="text" name="phone" id="phone-area" required>
                       </div>
                     </div>
                     <div class="col-md-6 clrp">
@@ -172,6 +256,49 @@
         <div data-lat="50.473119" data-lng="30.4500583" data-zoom="5" data-marker="img/marker.png" class="gmap"></div>
       </div>
     </main>
+    <div id="order-popup">
+      <div class="svg-popup-content">
+        <div class="logo-block"><img src="img/logo.png"></div>
+        <form action="mail.php" class="send">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 clrp">
+                <div class="form-group">
+                  <label for="form-text">Name</label>
+                  <input type="text" name="form-text" id="form-text">
+                </div>
+              </div>
+              <div class="col-md-6 clrp">
+                <div class="form-group">
+                  <label for="phone-area">Телефон</label>
+                  <input type="text" name="phone" id="phone-area" required>
+                </div>
+              </div>
+              <div class="col-md-6 clrp">
+                <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input type="text" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="col-md-6 clrp">
+                <div class="form-group">
+                  <label for="place">Регион</label>
+                  <input type="text" name="place" id="place" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group textarea-block">
+            <label for="form-textarea">Сообщение</label>
+            <textarea name="form-textarea" id="form-textarea"></textarea>
+            <button type="submit" class="btn full">Submit</button>
+          </div>
+          <input type="hidden" name="project_name" value="Имя сайта">
+          <input type="hidden" name="admin_email" value="tsumbaluk888@gmail.com">
+          <input type="hidden" name="form_subject" value="Заявка с имя сайта">
+        </form>
+      </div>
+    </div>
     <!--[if lt IE 9]
     <script src="libs/html5shiv/es5-shim.min.js"></script>
     <script src="libs/html5shiv/html5shiv.min.js"></script>

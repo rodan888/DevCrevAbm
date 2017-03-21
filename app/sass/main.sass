@@ -100,6 +100,11 @@ section
 	background-color: $green
 	padding-bottom: 55px
 	position: relative
+	background: rgb(0,166,85)
+	background: -moz-linear-gradient(-45deg,  rgba(0,166,85,1) 25%, rgba(255,168,0,1) 100%)
+	background: -webkit-linear-gradient(-45deg,  rgba(0,166,85,1) 25%,rgba(255,168,0,1) 100%)
+	background: linear-gradient(135deg,  rgba(0,166,85,1) 25%,rgba(255,168,0,1) 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a655', endColorstr='#ffa800',GradientType=1 )
 	&:before
 		position: absolute
 		content: ''
@@ -151,42 +156,154 @@ section
 	background-color: $main
 	position: relative
 	padding-bottom: 55px
-	&:before
-		position: absolute
-		content: ''
-		bottom: 0
-		left: 50%
-		margin-left: -70px
-		width: 0
-		height: 0
-		border-style: solid
-		border-width: 0 70px 55px
-		border-color: transparent transparent $white transparent
-	&:after
-		position: absolute
-		content: ''
-		left: 50%
-		margin-left: -22px
-		bottom: 6px
-		width: 0
-		height: 0
-		border-style: solid
-		border-width: 20px 22px 0
-		border-color: $main transparent transparent transparent
-	#send
+	background: rgb(0,166,85)
+	background: -moz-linear-gradient(-45deg,  rgba(0,166,85,1) 25%, rgba(255,168,0,1) 100%)
+	background: -webkit-linear-gradient(-45deg,  rgba(0,166,85,1) 25%,rgba(255,168,0,1) 100%)
+	background: linear-gradient(135deg,  rgba(0,166,85,1) 25%,rgba(255,168,0,1) 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a655', endColorstr='#ffa800',GradientType=1 )
+	.send
 		.col-md-6:nth-child(odd)
 			padding-right: 10px
 	.title
 		color: $white
-	.btn
-		background-color: $green
-		&:hover
-			color: $white
+	// .btn
+	// 	background-color: $green
+	// 	&:hover
+	// 		color: $white
 	.subtitle
 		font-size: 16px
 		color: $white
 		&:before
 			display: none
+
+#services
+	.services-wrap
+		max-width: 768px
+		margin: 0 auto
+		counter-reset: iteration
+	.service-item
+		position: relative
+		&:last-child:before
+			display: none
+		&:before
+			position: absolute
+			content: ''
+			top: 40px
+			left: 12px
+			width: 2px
+			height: 100%
+			background-color: $main
+		h3
+			// text-transform: uppercase
+			// font-size: 22px
+			padding: 10px 0 10px 50px
+			margin-bottom: 0
+			margin-left: 10px
+			position: relative
+			background-color: $main
+			color: $white
+			border-top-right-radius: 20px
+			border-bottom-right-radius: 20px
+			&:before
+				counter-increment: iteration
+				content: counter(iteration)
+				background-color: $main
+				width: 48px
+				height: 48px
+				left: -22px
+				top: -2px
+				border: 3px solid $white
+				border-radius: 50%
+				text-align: center
+				line-height: 44px
+		p
+			margin: 30px 0 40px 30px
+			color: $textColor
+			max-width: 768px
+			font-family: 'RobotoLight'
+
+#fast-order
+	position: relative
+	min-height: 150px
+	background: rgb(0,166,85)
+	background: -moz-linear-gradient(-45deg,  rgba(0,166,85,1) 25%, rgba(255,168,0,1) 100%)
+	background: -webkit-linear-gradient(-45deg,  rgba(0,166,85,1) 25%,rgba(255,168,0,1) 100%)
+	background: linear-gradient(135deg,  rgba(0,166,85,1) 25%,rgba(255,168,0,1) 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a655', endColorstr='#ffa800',GradientType=1 )
+	text-align: center
+	h3
+		font-size: 28px
+		line-height: 150px
+		margin-bottom: 0
+		&:before
+			display: none
+	.btn
+		margin-top: 54px
+
+
+#advantages
+	position: relative
+	padding-bottom: 55px
+	&:before
+		position: absolute
+		content: ''
+		bottom: -55px
+		left: 50%
+		margin-left: -70px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 55px 70px 0
+		border-color: $white transparent transparent transparent
+		z-index: 10
+	&:after
+		position: absolute
+		content: ''
+		left: 50%
+		margin-left: -22px
+		bottom: -32px
+		width: 0
+		height: 0
+		z-index: 10
+		border-style: solid
+		border-width: 20px 22px 0
+		border-color: $main transparent transparent transparent
+	.advantages-item
+		text-align: center
+		position: relative
+		h4
+			// font-family: 'RobotoLight'
+			// font-weight: 100
+			margin-bottom: 10px
+			&:before
+				display: none
+			span
+				font-size: 22px
+				color: $main
+				display: inline-block
+				vertical-align: initial
+				margin: 0 10px
+		p
+			font-family: 'RobotoLight'
+			font-weight: 100
+			margin-bottom: 30px
+			span
+				font-size: 22px
+				color: $main
+				display: inline-block
+				vertical-align: initial
+				margin: 0 10px
+		i
+			position: absolute
+			top: 40px
+			left: 50%
+			font-size: 80px
+			color: $main
+			@include transform(translateX(-50%))
+		.svg-progress-hexagon
+			margin: 0px auto 10px
+			width: 160px
+			height: 160px
 
 
 .phone-block
@@ -210,6 +327,30 @@ section
 			width: 49px
 			text-align: center
 			color: $white
+
+.svg-popup-content
+	.logo-block
+		text-align: center
+		margin-bottom: 30px
+		img
+			max-width: 120px
+	.clrp
+		padding: 0 5px
+	form.send
+		margin: 0 auto
+		label
+			color: #999
+		input,textarea
+			border: 1px solid $main
+		textarea
+			text-indent: 10px
+		.btn
+			// background-color: $green
+			// border: none
+			// &:hover
+			// 	background-color: transparent
+			// 	border: 1px solid $main
+
 
 
 .slider

@@ -11,6 +11,9 @@ header
 			div.col-sm-9
 				nav
 					ul.nav.right
-						each val, index in {1:'main',2:'technologies',3:'clients',4:'contact',5:'hire us'}
+						each val, index in {1:'main',2:'services',3:'technologies',4:'clients',5:'advantages',6:'contact',7:'hire us'}
 							li
-								a(href='#' + val)= val	
+								if index === '7'
+									button(type="button" class="order-popup" data-svg-popup="order-popup")= val
+								else
+									a(href='#' + val)= val
