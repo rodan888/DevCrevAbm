@@ -156,7 +156,7 @@ $(function() {
 					offset: { 'left':0, 'top':-0.03*jQuery(window).height() }
 				}
 			);
-		});		
+		});
 		jQuery('section').waypoint({
 			handler: function(event, direction) {
 				var active_section = jQuery(this);			
@@ -168,6 +168,7 @@ $(function() {
 			offset: '5%'
 		});
 
+
 		$('.send input, .send textarea').on('focusin',function(){
 			$(this).prev().css('marginTop','-35px');
 		}).on('focusout',function(){
@@ -175,24 +176,24 @@ $(function() {
 				return false;
 			}else{
 				$(this).prev().css('marginTop','0px');					
-			};		
+			};
 		});
 
 		//E-mail Ajax Send
-		$("form.send").submit(function() { 
-			var th = $(this);
-			$.ajax({
-				type: "POST",
-				url: this.action,
-				data: th.serialize()
-			}).done(function() {
-				alert("Thank you!");
-				setTimeout(function() {		
-					th.trigger("reset");
-				}, 1000);
-			});
-			return false;
-		});
+		// $("form.send").submit(function() { 
+		// 	var th = $(this);
+		// 	$.ajax({
+		// 		type: "POST",
+		// 		url: this.action,
+		// 		data: th.serialize()
+		// 	}).done(function() {
+		// 		alert("Thank you!");
+		// 		setTimeout(function() {		
+		// 			th.trigger("reset");
+		// 		}, 1000);
+		// 	});
+		// 	return false;
+		// });
 		//Chrome Smooth Scroll
 		try {
 			$.browserSelector();

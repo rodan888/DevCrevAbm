@@ -63,6 +63,13 @@
 
 @media only screen and (max-width : 768px)
 	/* Small Devices, Tablets */
+	header 
+		background-color: $white
+		.logo 
+			img
+				max-width: 200px
+		&.active
+			background-color: $white
 	.title
 		font-size: 40px
 	#main 
@@ -78,8 +85,6 @@
 			li
 				display: block!important
 				text-align: center!important
-
-
 	
 	/*Disable Animation on Mobile Devices*/
 	.animated
@@ -105,6 +110,14 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+	#fast-order 
+		h3
+			line-height: 50px
+			font-size: 22px
+			margin-top: 20px
+		.btn
+			margin-top: 20px
+			margin-bottom: 20px
 	#technologies 
 		.technologies-wrap 
 			.technologies-item
@@ -112,6 +125,15 @@
 					animation: none !important
 					&.second
 						width: 300px
+	#contact
+		.send 
+			text-align: left
+			.col-md-6
+				&:nth-child(odd)
+					padding-right: 0
+	.soc-block 
+		li
+			margin-bottom: 3px			
 	#main
 		background-position: 0 0
 
@@ -122,6 +144,13 @@
 				width: 100%!important
 			.image-wrap
 				margin: 10px 0
+
+	#services 
+		.service-item 
+			h3
+				&:before
+					top: -20px
+					left: -10px
 
 
 /* Custom, iPhone Retina */

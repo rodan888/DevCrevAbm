@@ -1,5 +1,5 @@
 doctype html
-html.no-js(lang="ru")
+html.no-js(lang="en")
 	include templates/structure/head
 	body
 		include templates/structure/header
@@ -17,19 +17,27 @@ html.no-js(lang="ru")
 					div.container-fluid
 						div.row
 							div.col-md-12
-								div.service-item
-									h3.subtitle Аналитика бизнеса и выявление потребностей
-									p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.
-								div.service-item
-									h3.subtitle Прототипирование и предварительный дизайн
-									p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.
-								div.service-item
-									h3.subtitle Разработка корпоративных приложений
-									p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.
-								div.service-item
-									h3.subtitle Продвижение в интернете
-									p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.
-											
+								-
+									var serviceList = [
+										{
+											title: 'Аналитика бизнеса и выявление потребностей',
+											descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
+										},{
+											title: 'Прототипирование и предварительный дизайн',
+											descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
+										},{
+											title: 'Разработка корпоративных приложений',
+											descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
+										},{
+											title: 'Продвижение в интернете',
+											descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
+										}
+									];
+								for val, index in serviceList
+									div.service-item
+										h3(class="subtitle")= val.title
+										p= val.descr
+								
 			include templates/widgets/order-fast
 
 			section#technologies
@@ -56,38 +64,68 @@ html.no-js(lang="ru")
 							for val, index in advanList
 								div.col-md-6.technologies-item.center
 									h3(class="subtitle")= val.title
-									img(src= val.image class="main-img")
-									img(src='img/first-icons-set.png' class="anim-img first")
-									img(src='img/second-icons-set.png' class="anim-img second")
+									img(src= val.image class="main-img" alt= val.title)
+									img(src='img/first-icons-set.png' alt="icons-set" class="anim-img first")
+									img(src='img/second-icons-set.png' alt="icons-set" class="anim-img second")
 
 			section#clients.mt2
 				h2.title.center.mt6.mb6 Clients
 				div.container
 					div.row
-						div.col-md-6.client-item
-							div.image-wrap
-								img(src="img/seampl6.jpg" alt="alt")
-							div.content-wrap
-								h4 Lorem ipsum dolor.
-								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
-						div.col-md-6.client-item
-							div.image-wrap
-								img(src="img/seampl1.jpg" alt="alt")
-							div.content-wrap
-								h4 Lorem ipsum dolor.
-								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
-						div.col-md-6.client-item
-							div.content-wrap
-								h4 Lorem ipsum dolor.
-								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
-							div.image-wrap
-								img(src="img/seampl2.jpg" alt="alt")
-						div.col-md-6.client-item
-							div.content-wrap
-								h4 Lorem ipsum dolor.
-								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
-							div.image-wrap
-								img(src="img/seampl9.jpg" alt="alt")
+						//- div.col-md-6.client-item
+						//- 	div.image-wrap
+						//- 		img(src="img/seampl1.jpg" alt="alt")
+						//- 	div.content-wrap
+						//- 		h4 Lorem ipsum dolor.
+						//- 		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
+
+						//- div.col-md-6.client-item
+						//- 	div.content-wrap
+						//- 		h4 Lorem ipsum dolor.
+						//- 		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
+						//- 	div.image-wrap
+						//- 		img(src="img/seampl2.jpg" alt="alt")
+						//- div.col-md-6.client-item
+						//- 	div.content-wrap
+						//- 		h4 Lorem ipsum dolor.
+						//- 		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
+						//- 	div.image-wrap
+						//- 		img(src="img/seampl9.jpg" alt="alt")
+						-
+							var clientsList = [
+								{
+									image: 'img/seampl6.jpg',
+									title: 'Lorem ipsum dolor.',
+									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.'
+								},{
+									image: 'img/seampl1.jpg',
+									title: 'Lorem ipsum dolor.',
+									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.'
+								},{
+									image: 'img/seampl2.jpg',
+									title: 'Lorem ipsum dolor.',
+									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.'
+								},{
+									image: 'img/seampl9.jpg',
+									title: 'Lorem ipsum dolor.',
+									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.'
+								}
+							];
+						for val, index in clientsList
+							if index%2 === 0
+								div.col-md-6.client-item
+									div.image-wrap
+										img(src= val.image alt="client")
+									div.content-wrap
+										h4= val.title
+										p= val.descr
+							else
+								div.col-md-6.client-item
+									div.content-wrap
+										h4= val.title
+										p= val.descr
+									div.image-wrap
+										img(src= val.image alt="client")
 			
 			section#advantages
 				h2.title.center.mt6.mb6 Why us?
@@ -139,25 +177,25 @@ html.no-js(lang="ru")
 				div.container
 					div.row
 						div.col-md-6
-							h3(class="subtitle") Отправьте нам запрос, заполнив поля ниже
+							h3(class="subtitle") Send us a request by filling in the fields below
 							include templates/widgets/order-form
 						div.col-md-6
-							h3(class="subtitle") Телефоны нашего офиса
+							h3(class="subtitle") Phones of our office
 							div.container-fluid.phone-block
 									div.row
 										div.col-md-6
-											p Россия
+											p Russia
 											a(href="tel://+7 (727) 311-03-51") +7 (727) 311-03-51
 										div.col-md-6
-											p Казахстан
+											p Kazakhstan
 											a(href="tel://+7 (727) 311-03-51") +7 (727) 311-03-51
 										div.col-md-6
-											p Украина
+											p Ukraine
 											a(href="tel://+380 (44) 207-39-55") +380 (44) 207-39-55
 										div.col-md-6
-											p Польша
+											p Poland
 											a(href="tel://+48 (22) 206-21-05") +48 (22) 206-21-05
-							h3(class="subtitle mt3") Свяжитесь в сетях
+							h3(class="subtitle mt3") Contact us in social networks
 							ul.soc-block
 								-
 									var social = {
@@ -172,38 +210,38 @@ html.no-js(lang="ru")
 									li
 										a(href="#" target="_blank" rel="nofollow")
 											i(class=val)
-			div#map
-				div(class="gmap" data-lat="50.473119" data-lng="30.4500583" data-zoom="5" data-marker="img/marker.png")
+			//- div#map
+			//- 	div(class="gmap" data-lat="50.473119" data-lng="30.4500583" data-zoom="5" data-marker="img/marker.png")
 			
 
 
 		include templates/widgets/order-popup
 		include templates/structure/scripts
-		script(src="http://maps.google.com/maps/api/js?key=AIzaSyDeQ0u4qmmTOrvSAMlV5UF9fIVOs9v7o0A")
-		script.
-			function mapInit(){
-				$('.gmap').each(function(){
-					var container = this;
-					var latlng = new google.maps.LatLng(
-						parseFloat($(container).data('lat')),
-						parseFloat($(container).data('lng'))
-					);
-					var mapOptions = {
-						zoom: parseInt($(container).data('zoom')),
-						center: latlng,
-						zoomControl: true,
-						mapTypeControl: false,
-						streetViewControl: false,
-						scrollwheel: true,
-						mapTypeId: google.maps.MapTypeId.ROADMAP
-					};
-					var map = new google.maps.Map(container, mapOptions);
+		//- script(src="http://maps.google.com/maps/api/js?key=AIzaSyDeQ0u4qmmTOrvSAMlV5UF9fIVOs9v7o0A")
+		//- script.
+		//- 	function mapInit(){
+		//- 		$('.gmap').each(function(){
+		//- 			var container = this;
+		//- 			var latlng = new google.maps.LatLng(
+		//- 				parseFloat($(container).data('lat')),
+		//- 				parseFloat($(container).data('lng'))
+		//- 			);
+		//- 			var mapOptions = {
+		//- 				zoom: parseInt($(container).data('zoom')),
+		//- 				center: latlng,
+		//- 				zoomControl: true,
+		//- 				mapTypeControl: false,
+		//- 				streetViewControl: false,
+		//- 				scrollwheel: true,
+		//- 				mapTypeId: google.maps.MapTypeId.ROADMAP
+		//- 			};
+		//- 			var map = new google.maps.Map(container, mapOptions);
 
-					var marker = new google.maps.Marker({
-						position: latlng,
-						map: map,
-						icon: $(container).data('marker')
-					});
-				});
-			};
-			mapInit();
+		//- 			var marker = new google.maps.Marker({
+		//- 				position: latlng,
+		//- 				map: map,
+		//- 				icon: $(container).data('marker')
+		//- 			});
+		//- 		});
+		//- 	};
+		//- 	mapInit();

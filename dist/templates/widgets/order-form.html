@@ -1,39 +1,39 @@
 
-<form action="mail.php" class="send">
+<form action="//formspree.io/tsumbaluk888@gmail.com" method="POST" class="send">
+  <input type="hidden" name="_next" value="/thanks.html" />
+  <input type="text" name="_gotcha" style="display:none" />
+  <input type="hidden" name="form_subject" value="Заявка с ZDEVCREV"/>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-6 clrp">
         <div class="form-group">
           <label for="form-text">Name</label>
-          <input type="text" name="form-text" id="form-text"/>
+          <input type="text" name="form-text"/>
         </div>
       </div>
       <div class="col-md-6 clrp">
         <div class="form-group">
-          <label for="phone-area">Телефон</label>
-          <input type="text" name="phone" id="phone-area" required="required"/>
+          <label for="phone-area">Phone</label>
+          <input type="text" name="phone" required="required"/>
         </div>
       </div>
       <div class="col-md-6 clrp">
         <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="text" name="email" id="email" required="required"/>
+          <label for="_replyto">E-mail</label>
+          <input type="email" name="_replyto" required="required"/>
         </div>
       </div>
       <div class="col-md-6 clrp">
         <div class="form-group">
-          <label for="place">Регион</label>
-          <input type="text" name="place" id="place" required="required"/>
+          <label for="place">Region</label>
+          <input type="text" name="place" required="required"/>
         </div>
       </div>
     </div>
   </div>
   <div class="form-group textarea-block">
-    <label for="form-textarea">Сообщение</label>
-    <textarea name="form-textarea" id="form-textarea"></textarea>
+    <label for="form-textarea">Message</label>
+    <textarea name="form-textarea"></textarea>
     <button type="submit" class="btn full">Submit</button>
   </div>
-  <input type="hidden" name="project_name" value="Имя сайта"/>
-  <input type="hidden" name="admin_email" value="tsumbaluk888@gmail.com"/>
-  <input type="hidden" name="form_subject" value="Заявка с имя сайта"/>
 </form>

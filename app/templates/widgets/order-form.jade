@@ -1,26 +1,26 @@
-form.send(action="mail.php")
+form.send(action="//formspree.io/tsumbaluk888@gmail.com" method="POST")
+	<input type="hidden" name="_next" value="/thanks.html" />
+	<input type="text" name="_gotcha" style="display:none" />
+	input(type="hidden" name="form_subject" value="Заявка с ZDEVCREV")
 	div.container-fluid
 		div.row
 			div.col-md-6.clrp
 				div.form-group
 					label(for="form-text") Name
-					input(type="text" name="form-text" id="form-text")
+					input(type="text" name="form-text")
 			div.col-md-6.clrp
 				div.form-group
-					label(for="phone-area") Телефон
-					input(type="text" name="phone" id="phone-area" required)
+					label(for="phone-area") Phone
+					input(type="text" name="phone" required)
 			div.col-md-6.clrp
 				div.form-group
-					label(for="email") E-mail
-					input(type="text" name="email" id="email" required)
+					label(for="_replyto") E-mail
+					input(type="email" name="_replyto" required)
 			div.col-md-6.clrp
 				div.form-group
-					label(for="place") Регион
-					input(type="text" name="place" id="place" required)
+					label(for="place") Region
+					input(type="text" name="place" required)
 	div.form-group.textarea-block
-		label(for="form-textarea") Сообщение
-		textarea(name="form-textarea" id="form-textarea")
+		label(for="form-textarea") Message
+		textarea(name="form-textarea")
 		button(type="submit" class="btn full") Submit
-	input(type="hidden" name="project_name" value="Имя сайта")
-	input(type="hidden" name="admin_email" value="tsumbaluk888@gmail.com")
-	input(type="hidden" name="form_subject" value="Заявка с имя сайта")

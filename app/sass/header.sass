@@ -56,7 +56,8 @@ a
 	&:hover
 		text-decoration: none
 		color: $black
-
+.over-hidden
+	overflow: hidden
 h1,h2,h3,h4,h5,h6
 	font-family: "OpenSansBold",sans-serif
 
@@ -372,10 +373,19 @@ header
 	position: relative
 .content-block
 	position: absolute
+	width: 90%
 	max-width: 600px	
 	position: absolute
 	top: 50%
 	left: 50%
+	text-align: center
+	padding: 20px 10px
+	background-color: $white
+	box-shadow: 0px 0px 6px $gray
+	@include border-radius(8px)	
 	@include transform(translateX(-50%) translateY(-50%))
+	.subtitle
+		&:before
+			display: none
 
 
