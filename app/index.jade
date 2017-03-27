@@ -7,36 +7,40 @@ html.no-js(lang="en")
 			section#main
 				h1.title.center.mt4 Your crew for your 
 					br 
-					| web & mobile
+					| web & mobile development
 				img(src="img/top-circle.png" class="circle" alt="circle")
 				img(src="img/top-monitor.png" class="monitor" alt="monitor")
 
 			section#services.mt2
 				h2.title.center.mt6.mb6 Services
-				div.services-wrap
-					div.container-fluid
-						div.row
-							div.col-md-12
-								-
-									var serviceList = [
-										{
-											title: 'Аналитика бизнеса и выявление потребностей',
-											descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
-										},{
-											title: 'Прототипирование и предварительный дизайн',
-											descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
-										},{
-											title: 'Разработка корпоративных приложений',
-											descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
-										},{
-											title: 'Продвижение в интернете',
-											descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
-										}
-									];
-								for val, index in serviceList
-									div.service-item
-										h3(class="subtitle")= val.title
-										p= val.descr
+				div.container
+					div.row
+						-
+							var serviceList = [
+								{
+									title: 'Concept',
+									image: 'img/concept1.png',
+									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
+								},{
+									title: 'Prototyping',
+									image: 'img/concept2.png',
+									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
+								},{
+									title: 'Design',
+									image: 'img/concept3.png',
+									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
+								},{
+									title: 'Product',
+									image: 'img/concept7.png',
+									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, deleniti perferendis temporibus doloremque dolores nam soluta molestias, molestiae nesciunt officia est. Dolorum in vitae eveniet expedita voluptates officia minus doloribus.'
+								}
+							];
+						for val, index in serviceList
+							div.col-md-3
+								div.service-item
+									img(src= val.image class="img" alt= val.title)
+									h3(class="subtitle" data-index=index+1 )= val.title
+									p= val.descr
 								
 			include templates/widgets/order-fast
 
@@ -71,106 +75,117 @@ html.no-js(lang="en")
 			section#clients.mt2
 				h2.title.center.mt6.mb6 Clients
 				div.container
-					div.row
-						//- div.col-md-6.client-item
-						//- 	div.image-wrap
-						//- 		img(src="img/seampl1.jpg" alt="alt")
-						//- 	div.content-wrap
-						//- 		h4 Lorem ipsum dolor.
-						//- 		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
-
-						//- div.col-md-6.client-item
-						//- 	div.content-wrap
-						//- 		h4 Lorem ipsum dolor.
-						//- 		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
-						//- 	div.image-wrap
-						//- 		img(src="img/seampl2.jpg" alt="alt")
-						//- div.col-md-6.client-item
-						//- 	div.content-wrap
-						//- 		h4 Lorem ipsum dolor.
-						//- 		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.
-						//- 	div.image-wrap
-						//- 		img(src="img/seampl9.jpg" alt="alt")
+					div.row						
 						-
 							var clientsList = [
 								{
-									image: 'img/seampl6.jpg',
-									title: 'Lorem ipsum dolor.',
-									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.'
+									image: 'img/clients1.jpg',
+									title: 'Green meadows',
+									link: 'http://greenmeadows.com.ua/',
+									descr: 'ООО «Грин Медоу» является относительно молодой, но стремительно развивающейся производственно-дистрибьюторской компанией на рынке продуктов питания Украины.'
 								},{
-									image: 'img/seampl1.jpg',
-									title: 'Lorem ipsum dolor.',
-									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.'
+									image: 'img/clients3.jpg',
+									link: 'http://ykarservis.com.ua/',
+									title: 'Ykar Servis',
+									descr: 'Компания "Ю-Кар-Сервис" – это команда специалистов, которая проводит техническое обслуживание спецтехники любого уровня сложности.'
 								},{
-									image: 'img/seampl2.jpg',
-									title: 'Lorem ipsum dolor.',
-									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.'
+									image: 'img/clients2.jpg',
+									title: 'Rif line',
+									link: 'http://rif-line.com/',
+									descr: 'Компания «РИФ» является одним из первых и ведущих производителей строительно-отделочных материалов из ПВХ в Украине.'
 								},{
-									image: 'img/seampl9.jpg',
-									title: 'Lorem ipsum dolor.',
+									image: 'img/clients1.jpg',
+									title: 'Green meadows',
+									link: 'http://greenmeadows.com.ua/',
 									descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel natus suscipit laboriosam exercitationem quas! Eaque harum nisi temporibus, deserunt fuga.'
 								}
 							];
 						for val, index in clientsList
-							if index%2 === 0
-								div.col-md-6.client-item
-									div.image-wrap
-										img(src= val.image alt="client")
-									div.content-wrap
-										h4= val.title
-										p= val.descr
-							else
-								div.col-md-6.client-item
-									div.content-wrap
-										h4= val.title
-										p= val.descr
-									div.image-wrap
-										img(src= val.image alt="client")
+							div.col-md-6.mb2
+								div.client-item
+									img(src= val.image alt="client")
+								div.content-wrap
+									h4= val.title
+									p= val.descr
+									a(href= val.link target="_blank" rel="nofollow") read more
+							//- if index%2 === 0
+							//- else
+								
+
+
 			
 			section#advantages
 				h2.title.center.mt6.mb6 Why us?
 				div.container
 					div.row
-						div.col-md-3
-							div.advantages-item
+						//- div.col-md-3
+						//- 	div.advantages-item
+						//- 		div.svg-progress-hexagon
+						//- 		h4.subtitle
+						//- 			| Lorem ipsum dolor sit amet. 
+						//- 		i.fa.fa-line-chart
+						//- 		p 
+						//- 			span {
+						//- 			| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!
+						//- 			span }
+						//- div.col-md-3
+						//- 	div.advantages-item
+						//- 		div.svg-progress-hexagon
+						//- 		h4.subtitle
+						//- 			| Lorem ipsum dolor sit amet. 
+						//- 		i.fa.fa-bar-chart
+						//- 		p 
+						//- 			span {
+						//- 			| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!
+						//- 			span }
+						//- div.col-md-3
+						//- 	div.advantages-item
+						//- 		div.svg-progress-hexagon
+						//- 		h4.subtitle
+						//- 			| Lorem ipsum dolor sit amet. 
+						//- 		i.fa.fa-user
+						//- 		p 
+						//- 			span {
+						//- 			| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!
+						//- 			span }
+						//- div.col-md-3
+						//- 	div.advantages-item
+						//- 		div.svg-progress-hexagon
+						//- 		h4.subtitle
+						//- 			| Lorem ipsum dolor sit amet. 
+						//- 		i.fa.fa-shield
+						//- 		p 
+						//- 			span {
+						//- 			| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!
+						//- 			span }
+						div.col-md-12
+							div.advantages-wrap
 								div.svg-progress-hexagon
-								h4.subtitle
-									| Lorem ipsum dolor sit amet. 
-								i.fa.fa-line-chart
-								p 
-									span {
-									| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!
-									span }
-						div.col-md-3
-							div.advantages-item
+									i.fa.fa-line-chart
+									div.content-wrap
+										h4.subtitle
+											| Awesome
 								div.svg-progress-hexagon
-								h4.subtitle
-									| Lorem ipsum dolor sit amet. 
-								i.fa.fa-bar-chart
-								p 
-									span {
-									| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!
-									span }
-						div.col-md-3
-							div.advantages-item
+									i.fa.fa-bar-chart
+									div.content-wrap
+										h4.subtitle
+											| Profi
 								div.svg-progress-hexagon
-								h4.subtitle
-									| Lorem ipsum dolor sit amet. 
-								i.fa.fa-user
-								p 
-									span {
-									| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!
-									span }
-						div.col-md-3
-							div.advantages-item
+									i.fa.fa-user
+									div.content-wrap
+										h4.subtitle
+											| Crew
 								div.svg-progress-hexagon
-								h4.subtitle
-									| Lorem ipsum dolor sit amet. 
-								i.fa.fa-shield
-								p 
-									span {
-									| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae provident dolore, consectetur esse, ipsa hic!
-									span }
+									i.fa.fa-shield
+									div.content-wrap
+										h4.subtitle
+											| Tech
+								div.svg-progress-rhomb
+									i.fa.fa-thumbs-up
+									div.content-wrap
+										h4.subtitle
+											| Finished product
+
 							
 			section#contact
 				h2.title.center.mt6.mb6 Contact us
@@ -183,33 +198,31 @@ html.no-js(lang="en")
 							h3(class="subtitle") Phones of our office
 							div.container-fluid.phone-block
 									div.row
-										div.col-md-6
-											p Russia
-											a(href="tel://+7 (727) 311-03-51") +7 (727) 311-03-51
-										div.col-md-6
-											p Kazakhstan
-											a(href="tel://+7 (727) 311-03-51") +7 (727) 311-03-51
-										div.col-md-6
+										div.col-md-12
+											p USA
+											a(href="tel://+1 (929) 999-21-42") +1 (929) 999-21-42
+										div.col-md-12
 											p Ukraine
-											a(href="tel://+380 (44) 207-39-55") +380 (44) 207-39-55
-										div.col-md-6
-											p Poland
-											a(href="tel://+48 (22) 206-21-05") +48 (22) 206-21-05
-							h3(class="subtitle mt3") Contact us in social networks
-							ul.soc-block
-								-
-									var social = {
-										1:'fa fa-pinterest',
-										2:'fa fa-facebook',
-										3:'fa fa-linkedin',
-										4:'fa fa-vk',
-										5:'fa fa-github',
-										6:'fa fa-codepen'
-									};		
-								each val, index in social
-									li
-										a(href="#" target="_blank" rel="nofollow")
-											i(class=val)
+											a(href="tel://+380 (50) 529-57-06") +380 (50) 529-57-06
+										//- div.col-md-6
+										//- 	p Kazakhstan
+										//- 	a(href="tel://+7 (727) 311-03-51") +7 (727) 311-03-51
+										//- div.col-md-6
+										//- 	p Poland
+										//- 	a(href="tel://+48 (22) 206-21-05") +48 (22) 206-21-05
+							//- h3(class="subtitle mt3") Contact us in social networks
+							//- ul.soc-block
+							//- 	-
+							//- 		var social = {
+							//- 			2:'fa fa-facebook',
+							//- 			3:'fa fa-linkedin',
+							//- 			4:'fa fa-vk',
+							//- 			5:'fa fa-github'
+							//- 		};		
+							//- 	each val, index in social
+							//- 		li
+							//- 			a(href="#" target="_blank" rel="nofollow")
+							//- 				i(class=val)
 			//- div#map
 			//- 	div(class="gmap" data-lat="50.473119" data-lng="30.4500583" data-zoom="5" data-marker="img/marker.png")
 			

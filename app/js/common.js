@@ -132,14 +132,23 @@ $(function() {
 
 		$('.svg-progress-hexagon').svgprogress({
 			figure: "hexagon",
+			progressFillGradient: ['#00a655','#FFA800'],
+      progressWidth: 4,
+			emptyFill: '#ccc'
+		});
+
+		$('.svg-progress-rhomb').svgprogress({
+			figure: "rhomb",
 			progressFill: '#FFA800',
+      progressWidth: 2,
 			emptyFill: '#ccc'
 		});
 
 		jQuery('#advantages').waypoint({	
 			handler: function(event, direction){
 				if (direction === "down") {
-					$('.svg-progress-hexagon').trigger("redraw");					
+					$('.svg-progress-hexagon').trigger("redraw");
+					$('.svg-progress-rhomb').trigger("redraw");
 				};
 			},
 			offset: '10%'

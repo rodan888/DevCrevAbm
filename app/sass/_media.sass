@@ -57,6 +57,13 @@
 	.phone-block a
 		margin-bottom: 10px
 
+	#services
+		.col-md-3
+			.service-item
+				h3:after
+					display: none
+
+
 @media only screen and (max-width : 900px)
 	#main .monitor
 		width: 700px
@@ -151,7 +158,34 @@
 				&:before
 					top: -20px
 					left: -10px
+	#advantages 
+		.advantages-wrap 
+			.subtitle
+				font-size: 14px
+			.svg-progress-hexagon
+				width: 100px
+				height: 100px
+				&:before
+					display: none
+				&:nth-child(1) .content-wrap,
+				&:nth-child(2) .content-wrap
+					top: 105px
+				&:nth-child(3) .content-wrap,
+				&:nth-child(4) .content-wrap
+					top: -25px
 
+				i
+					font-size: 35px
+					top: 34px
+			.svg-progress-rhomb
+				width: 300px
+				height: 400px
+
+	#clients
+		.col-md-6
+			text-align: center
+		.client-item
+			box-shadow: none
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
